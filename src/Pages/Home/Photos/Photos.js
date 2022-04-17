@@ -6,8 +6,8 @@ const Photos = ({gallery}) => {
     return (
         <div >
             <img className='gallery-img container' src={image} alt="" />
-            <h2>{name}</h2>
-        </div>
+           <p className='fs-4'>{name}</p>
+        </div> 
     );
 };
 
