@@ -5,3 +5,7 @@ box-shadow:  31px 31px 62px #949494,
              -31px -31px 62px #ffffff;
 }
 
+
+.card{
+    height: 530px;
+}
