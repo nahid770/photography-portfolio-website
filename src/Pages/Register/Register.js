@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import github from '../../Image/github logo.png'
 import google from '../../Image/google logo.png'
 import React, { useState } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 
@@ -15,6 +15,7 @@ const [password, setPassword] = useState('');
 const [confirmPassword, setconfirmPassword] = useState('');
 const [error, setError] = useState('');
 const navigate = useNavigate();
+const [sendEmailVerification, sending] = useSendEmailVerification(auth);
 
 const [
     createUserWithEmailAndPassword,
@@ -66,7 +67,13 @@ const handleFormSubmit =event =>{
     <input onBlur={handlePasswordBlur} type="password" name="password" id="" placeholder='password' required/><br />
     <input onBlur={handleConfirmPasswordBlur} type="password" name="confirm-password" id="" placeholder='confirm-password' required/><br />
     <p style={{color:'red'}}>{error} </p>
-    <input type="submit" value="register" />
+    <input 
+     onClick={async () => {
+        await sendEmailVerification();
+        alert('Sent email');
+      }}
+    
+    type="submit" value="register" />
   
     <p className='mt-3'>Already have accout? <Link to='/login'>Login</Link></p>
         </form>
@@ -79,7 +86,7 @@ const handleFormSubmit =event =>{
         </div>
 
         <button className='footer-btn'> <img src={google} alt="" /> Google sign up</button><br />
-                <button className='footer-btn mt-2'> <img src={github} alt="" /> Github sign up</button><br />
+               <br />
     </div>
     );
 };

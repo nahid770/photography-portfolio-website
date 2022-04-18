@@ -23,12 +23,19 @@ const Login = () => {
 
 
 // google login
-// const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
-let errorELement;
+const [signInWithGoogle, user1, error1] = useSignInWithGoogle(auth);
+let errorElement;
 
-if (error) {   
-    errorELement= <p>Error: {error.message}</p>
+// if (error || error1) {   
+//     errorELement= <p className='text-danger'>Error: {error?.message} {error1?.message}</p>
+//   }
+
+  if (error1) {
+    errorElement = <p className="text-danger"> Error {error1?.message}</p>;
+  } else {
+    errorElement = "";
   }
+
   if (user) {
     navigate('/home');
     return (
@@ -77,11 +84,11 @@ const handleFormSubmit =event =>{
         <div className='last-div'></div>
 
         </div>
-        {errorELement}
+        { errorElement}
             <div className="social-login mt-3">
                 
                 <button
-                // onClick={()=> signInWithGoogle()}
+                onClick={()=> signInWithGoogle()}
                 className='footer-btn'> <img src={google} alt="" /> Google sign in</button><br />
                 {/* {errorELement} */}
                 <button className='footer-btn mt-2'> <img src={github} alt="" /> Github sign in</button><br />
