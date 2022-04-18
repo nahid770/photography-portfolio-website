@@ -1,0 +1,17 @@
+.first-user img{
+    width: 340px;
+    
+}
+.second-user img{
+    width: 350px;
+}
+
+.last-user img{
+    width: 350px;
+}
+.review-container{
+    border-radius: 30px;
+background: linear-gradient(145deg, #f0f0f0, #cacaca);
+box-shadow:  26px 26px 52px #9f9f9f,
+             -26px -26px 52px #ffffff;
+}
