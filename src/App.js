@@ -15,8 +15,8 @@ function App() {
     <div className="App " >
       <Header></Header>
       <Routes>
-      
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="service" element={<Service />} />
         <Route path="about" element={<About></About>} />
         <Route path="blog" element={<Blog />} />
@@ -24,8 +24,6 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
-    
-
     </div>
   );
 }

@@ -9,9 +9,9 @@ const Login = () => {
         <div className='login-form'>
             <form >
         <h2 className='mb-4 pt-3'>Please login</h2>
-        <input type="email" name="email" id="" placeholder='email'/><br />
-        <input type="password" name="password" id="" placeholder='password'/><br />
-      <button className='footer-btn mt-4'>login</button>
+        <input type="email" name="email" id="" placeholder='email' required/><br />
+        <input type="password" name="password" id="" placeholder='password' required/><br />
+       <button className='footer-btn mt-4'>login</button>
       
 
             </form>
