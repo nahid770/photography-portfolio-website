@@ -3,15 +3,17 @@ import './Service.css'
 import plan1 from '../../Image/services/plan1.jpg'
 import plan2 from '../../Image/services/plan2.jpg'
 import plan3 from '../../Image/services/plan3.jpg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const handleClick =()=>{
-  <Link to="service"></Link>
-  console.log('clicked')
-}
+
 
 const Service = () => {
-  
+  const navigate = useNavigate()
+  const handleClick = () =>{
+    navigate('/checkout')
+
+  }
+
     return (
      
 
@@ -28,7 +30,7 @@ const Service = () => {
       <p className="card-text">1 Month Unlimited access</p>
       <p >Only <span className='text-primary fs-3'>$99</span><small className='text-muted'>/mo</small></p>
       </div>
-      <button onClick={handleClick} className='footer-btn '>Buy Now</button>
+      <button onClick={handleClick}  className='footer-btn '>Buy Now</button>
     </div>
   </div>
   <div className="card ms-4">
